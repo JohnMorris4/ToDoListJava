@@ -1,0 +1,6 @@
+Mail out Cards	Buy cards for the family	02-03-2018
+Get Cheryl's Truck	Go get her truck from Randy's	02-02-2018
+Buy Milk	Buy cards for the family	02-03-2018
+Go to Bar	Go to Bar	02-06-2018
+Do more testing	Keep working on this app	02-07-2018
+Java is fun	Just keep working on this	02-07-2018
