@@ -9,27 +9,49 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.Tooltip?>
 <BorderPane fx:id="mainBorderPane" fx:controller="com.morrisje.todolist.Controller"
             xmlns:fx="http://javafx.com/fxml">
     <top>
-        <MenuBar>
-            <Menu text="File">
-                <items>
-                    <MenuItem text="New..."/>
-                    <SeparatorMenuItem/>
-                    <MenuItem text="Exit"/>
-                </items>
-            </Menu>
-        </MenuBar>
+        <VBox>
+            <MenuBar>
+                <Menu text="File">
+                    <items>
+                        <MenuItem text="New..." onAction="#showNewItemDialog"/>
+                        <SeparatorMenuItem/>
+                        <MenuItem text="Exit"/>
+                    </items>
+                </Menu>
+            </MenuBar>
+            <ToolBar>
+                <HBox>
+                    <Button onAction="#showNewItemDialog">
+                        <tooltip>
+                            <Tooltip text="Add a Todo"/>
+                        </tooltip>
+                            <graphic>
+                                <ImageView>
+                                    <Image url="@/toolbarButtonGraphics/general/New24.gif"/>
+                                </ImageView>
+
+                            </graphic>
+                    </Button>
+                </HBox>
+            </ToolBar>
+        </VBox>
     </top>
     <left>
-        <ListView fx:id="todoListView">
+        <ListView fx:id="todoListView" onKeyPressed="#handelKeyPressed">
 
         </ListView>
     </left>
     <center>
         <VBox style="-fx-background-color: #ffffff">
-            <TextArea fx:id="todoListTextArea" VBox.vgrow="ALWAYS"/>
+            <TextArea fx:id="todoListTextArea" VBox.vgrow="ALWAYS" wrapText="true"/>
             <HBox>
                 <Label text="Due: " style="-fx-background-color: #ffffff">
                     <font>
